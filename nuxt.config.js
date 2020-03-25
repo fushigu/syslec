@@ -40,6 +40,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/markdownit',
   ],
   /*
   ** Axios module configuration
@@ -47,6 +48,21 @@ export default {
   */
   axios: {
   },
+  //markdownit config
+  markdownit: {
+    preset: 'default',
+    injected: true,
+    breaks: true,
+    html: true,
+    linkify: true,
+    typography: true,
+    xhtmlOut: true,
+    langPrefix: 'language-',
+    quotes: '“”‘’',
+    highlight: function (/*str, lang*/) { return ''; },
+  },
+
+
   /*
   ** Build configuration
   */
