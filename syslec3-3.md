@@ -131,7 +131,15 @@ let b = "あいうえお"
 a = a + b
 console.log(a)
 ```
-どうなりましたか？ 数字が文字列に変換されて、表示されたと思います。
+どうなりましたか？ 数字が文字列に変換されて、表示されたと思います。しかし、これでは開発時に混乱します。ちゃんと文字列に変更していることを書きましょう。そういう時に、`String(数値)`と書けばいいです。
+
+```javascript
+let a = 2
+let b = "あいうえお"
+a = String(a) + b
+console.log(a)
+```
+
 
 ### 補足
 
@@ -165,6 +173,13 @@ alert(math + english + japanese)
 alert((math + english + japanese) / 3)
 ```
 はい、合計点が出てきた後に、平均点が出てきましたか？
+
+終わりのalertのところを
+```javascript
+alert("合計点は" + String(math + english + japanese) + "です。")
+alert("平均点は" + String((math + english + japanese) / 3) + "です。")
+```
+とするとかっこよくなります。
 
 
 この章は以上で終わりです。
