@@ -28,6 +28,7 @@ let c = 4
 console.log(a * b) // 掛け算
 console.log(c / a) // 割り算
 console.log(a ** b) // べき乗
+console.log(c % a) // 剰余
 ```
 
 こんな感じに変数に計算結果を再び代入することもできます。
@@ -143,4 +144,27 @@ console.log(a + b) // おそらく11と表示される
 a = parseInt(a)
 console.log(a + b) // おそらく2と表示される
 ```
+
+## なにかしよう！
+さて、ここまで勉強するとできることがぐっと増えます。
+
+ここで、ユーザーから値を受け取るにはどうしたらいいか覚えていますか？
+そうですね
+```javascript
+let 変数 = prompt("質問")
+```
+とすればよかったですね。
+では、ここで数学、英語と国語の点数を受け取って、合計点と平均点を返すプログラムを書いてみましょう！
+
+```javascript
+let math = prompt("数学の点数を入力してください")
+let english = prompt("英語の点数を入力してください")
+let japanese = prompt("国語の点数を入力してください")
+
+alert(math + english + japanese)
+alert((math + english + japanese) / 3)
+```
+はい、合計点が出てきた後に、平均点が出てきましたか？
+
+
 この章は以上で終わりです。
