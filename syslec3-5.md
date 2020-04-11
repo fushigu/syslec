@@ -56,12 +56,16 @@ for (let i = 0;i < 12;i = i + 2) {
 
 わかりますか？
 
+<details><summary>答え</summary><div>
+
 ```javascript
 for (let i = 1;i < 12;i = i + 2) {
     console.log(i)
 }
 ```
 という感じになると思います。
+
+</div></details>
 
 とりあえず、今回はこれで終わります。
 
@@ -101,7 +105,7 @@ for (let i = 0;i < 12;i = i + 1){
 ```
 
 ### switch文
-前回の話にかけばよかったのですが、忘れていた。
+前回の話にかけばよかったのですが、忘れていた。かっこの中に入った値がcaseの値と同じとき、caseからbreakまでが処理されます。もし一致する値がなければdefaultのところが処理されます。
 ```javascript
 switch(変数) {
     case 値:
@@ -124,6 +128,9 @@ switch(a) {
         break;
     case 2:
         console.log("aは2です。")
+        break;
+    default:
+        console.log("それ以外")
         break;
 }
 ```

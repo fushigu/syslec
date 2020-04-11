@@ -274,3 +274,14 @@ wake(9)
 let wake = (time) => console.log(String(time) + "時に起きました。")
 wake(9)
 ```
+
+## 関数の受け渡し
+関数が変数に代入可能であることがわかりました。
+つまり、関数の引数として関数をとれます。
+
+例
+```javascript
+let wake = (func) => func()
+
+wake(() => console.log("起きました"))
+```

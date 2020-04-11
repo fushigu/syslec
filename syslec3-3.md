@@ -163,6 +163,8 @@ let 変数 = prompt("質問")
 ```
 とすればよかったですね。
 では、ここで数学、英語と国語の点数を受け取って、合計点と平均点を返すプログラムを書いてみましょう！
+<details><summary>答え</summary>
+<div>
 
 ```javascript
 let math = prompt("数学の点数を入力してください")
@@ -172,14 +174,19 @@ let japanese = prompt("国語の点数を入力してください")
 alert(math + english + japanese)
 alert((math + english + japanese) / 3)
 ```
+</div>
+
 はい、合計点が出てきた後に、平均点が出てきましたか？
 
 終わりのalertのところを
+<div>
+
 ```javascript
 alert("合計点は" + String(math + english + japanese) + "です。")
 alert("平均点は" + String((math + english + japanese) / 3) + "です。")
 ```
+</div>
 とするとかっこよくなります。
-
+</details>
 
 この章は以上で終わりです。
