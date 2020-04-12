@@ -155,7 +155,7 @@ function shoeNoData() {
 <details><summary>コード</summary>
 
 ```javascript
-//関数の定義とdata葉省略
+//関数の定義とdataは省略
 
 let name = getName()
 let profile = searchPerson(data, name)
@@ -221,9 +221,33 @@ else {
 
 </div></details>
 
+## 4をつくろう
 
+ここからはオプションです。自由にしてください。
 
+終了するか聞く関数を書きましょう。
+confirmという関数があります。それを使いましょう。はいならtrue、いいえならfalseが返ってきます。
 
+頑張ってください。
 
+<details><summary>答え</summary>
 
+```javascript
+//関数の定義とdataは省略
+let flag = true //スコープを知らないと厳しいか
+while(flag) {
+    let name = getName()
+    let profile = searchPerson(data, name)
+    if (profile === -1) {
+        showNoData()
+    }
+    else {
+        shoeProfile(profile)
+    }
+    flag = confirm("終わりますか")
+}
+```
 
+</details>
+
+以上でsyslec終わりです。
