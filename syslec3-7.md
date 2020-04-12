@@ -105,6 +105,15 @@ let country = "english"
 console.log(greeting[country])
 ```
 
+また、初期化ができます。
+
+```javascript
+let greeting = {
+        japanese: "こんにちは",
+        english: "Hello",
+    }
+```
+
 この連想配列はよく使うので、しっかり覚えておきましょう。
 
 ## 小話
