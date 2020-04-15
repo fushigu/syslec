@@ -153,5 +153,4 @@ console.log(comp.min(10, 5))
 module.export.max = max
 module.export.min = min
 ```
-
-まあ、いいやよくわからん。
+これ以外の書き方もあるんですが、リファレンス読んでも、これ以外の書き方について理解が生えなかったので、これで終わります。
