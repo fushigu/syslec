@@ -25,7 +25,6 @@ const app = express()
 
 app.get("/", (request, response) => {
     response.send("Hello World!")
-    response.end()
 })
 
 app.listen(3000)
@@ -44,7 +43,6 @@ const app = express()
 ```javascript
 app.get("/", (request, response) => {
     response.send("Hello World!")
-    response.end()
 })
 ```
 この関数からです。この関数はGET通信が**された**際の処理について書かれています。第一引数はurlです。え？ 短くないって？ これより上のurlはこのサーバーが立っている場所を指定するもので、その後のurlについての指定をしています。
@@ -53,6 +51,36 @@ app.get("/", (request, response) => {
 
 第二引数について見ていきたいと思います。これは関数ですね。requestやresponseのメソッドを実行することで、いろいろな処理を書くことができます。いちおう、request、responseに何が入っているのかをみましょうか。
 
-[expressのリファレンス]()
+[expressのリファレンス](https://expressjs.com/ja/api.html)を見るといろいろなメソッドがあることがわかります。今回は`send()`と`end()`について、プレーンテキストを送信する方法だけを説明します。もちろんhtmlファイルを送ったり、htmlテンプレートやjsxもパッケージを入れることで確か扱えるはずです。
 
+`.send()`は簡単です。渡してあげたものがGET通信された際、クライアントに送られます。
+例では、プレーンテキストを送信しています。
 
+`.end()`はサーバーとの通信が終わったことを示します。明示的に読んであげるといいです。（呼ばなくても、`express`が何とかしてくれると信じています。
+
+以上、GET通信の**待ち受ける**関数です。
+```javascript
+app.listen(3000)
+```
+ここで、サーバーを立てるポート番号を指定します。はい。ちなみに第2引数に関数をとることができ、サーバーが立った後、実行されます。
+
+## POST通信も待ち受けよう
+
+POST通信を待ち受けることもexpressなら簡単です。
+
+まず、以下のコードを`require()`の直後においてください。
+```javascript
+app.use(app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+```
+
+そのうえで、以下のように書くことができます。
+```javascript
+app.post("/", (request, response) => {
+    let body = request.body
+    response.send('Hello')
+})
+```
+ほとんど、GET通信の場合と同じです。少し違うのは、`request.body`というプロパティを使っているところでしょうか？ ここには、POST通信に送られてきたオブジェクトが入っています。
+
+こういう感じで、使うことができます。

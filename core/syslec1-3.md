@@ -218,3 +218,32 @@ callasync()
 
 とりあえず、非同期関数がこれからよく出てくるので、非同期関数の戻り値を使って何かをする場合には気を付けましょう。
 
+さて、一番重要なことを忘れています。そうです。エラー処理です。`async await`にしたことで、.catchにあたる部分がなくなってしまします。そういう時は`try{}catch{}`です。
+
+これは`try{中身}`に書いた処理で何かしらのエラーがおこった場合、catchのほうに処理が移ります。
+
+さっきのコードを書き直してみると、
+```javascript
+//非同期関数
+function asyncFunc(num) {
+    return new Promise((resolve, reject) => {
+        if (num === 42) reject(new Error(42))
+        resolve(num)
+    })
+}
+
+async function callasync() { //先頭に`async`とつけることでaysnc関数になります。
+    try{
+        let value = await asyncFunc(12) //非同期関数の先頭に、`await`とつけることでasyncFuncが実行を終えるまで待ってくれます。
+        console.log(value)
+    }
+    catch{
+        console.error("error")
+    }
+    console.log("Hello")
+}
+
+callasync()
+```
+
+という感じになります。エラーが起きても起きなくても処理したい内容のためにfinallyというものがあることに触れといて終わります。
