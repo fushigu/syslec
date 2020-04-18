@@ -70,7 +70,7 @@ POST通信を待ち受けることもexpressなら簡単です。
 
 まず、以下のコードを`require()`の直後においてください。
 ```javascript
-app.use(app.use(express.json()) // for parsing application/json
+app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 ```
 

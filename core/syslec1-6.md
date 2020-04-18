@@ -13,7 +13,7 @@
 npm install axios
 ```
 コマンドで以上のコマンドを打ちましょう。
-では、まず適当なサイトにGET通信を行いましょう。
+では、まずPOST通信をする前に、適当なサイトにGET通信を行いましょう。
 
 以下のコードを打ち込んでください。
 
@@ -40,3 +40,49 @@ res.then((res) => {
 ```
 
 非同期関数の`axios.get()`は戻り値で、GET通信した後サーバーからのレスポンスを返すことになります。
+そして、戻り値を受け取った`res`の`.data`というプロパティには、メインになるデータが入っています。今回は、GET通信で、htmlファイルをとってきたので、タグとかが表示されているのではないでしょうか？
+
+## POST通信をしよう
+さて、以下のexpressのサーバーを起動した状態にしてください。
+
+```javascript
+const express = require('express')
+const app = express()
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+app.get('/', (req, res) => {
+    res.send('hello')
+})
+app.post('/', (req, res) => {
+    res.send({'greeting': 'goodbye'})
+    const data = req.body;
+    console.log(data)
+})
+
+app.listen(3000)
+```
+とりあえず、上のコードを見ていきましょう。ここで上のコードは、サーバー側のコードであることに注意しましょう。`app.get`は大丈夫だと思うので、`app.post`について復習しましょう。
+
+`app.post()`の第2引数は、二つの引数をとる関数であることは説明したと思います。そして、POST通信はクライアントからのデータをとってくるものであることも思い出してください。`req.body`という部分にサーバー向けに送られてきたデータが入っています。
+
+今回のコードでは、`console.log(data)`という部分で送られてきた内容をexpressのサーバーが立っているコンソールで表示しています。
+
+では、肝心のクライアント側の説明に移ろうと思います。以下のコードをexpressのコードとはまた別のjsファイルに書いて、新しくターミナルを起動して、実行してみましょう。
+
+```javascript
+const axios = require('axios')
+
+const res = axios.post('http://localhost:3000/', {'greeting': 'Hello'})
+
+res.then((res) => {
+    console.log(res.data)
+})
+```
+
+まず、ここ関数です。
+
+```javascript
+axios.post('http://localhost:3000/', {'greeting': 'Hello'})
+```
