@@ -16,4 +16,18 @@ Node.jsでMongoDBに接続するパッケージはいくつかあります。有
 ## MongoDB
 さて、MongoDBに接続する前に、まずMongoDBの気持ちを知らないといけません。MongoDBは以下のように、データベースの中にコレクションというまとまりがあります。そして、コレクションの中に、オブジェクトのようなドキュメントがたくさん並んび、配列みたいな感じになっています。
 
-さて、
+## MongoDBサーバーと接続する
+さて、mongooseを使っていきましょう。
+```
+npm install mongoose
+```
+
+```javascript
+const mongoose = require('mongoose')
+
+mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParse: true});
+
+const db = mongoose.connection;
+```
+
+[https://tech-waplus.com/programming/20190415-node-js-expressmongo-mongoose/#DB](https://tech-waplus.com/programming/20190415-node-js-expressmongo-mongoose/#DB)このページみれば使い方がわかる。
