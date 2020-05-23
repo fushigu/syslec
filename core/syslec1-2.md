@@ -15,7 +15,9 @@ brew install nodenv
 ```
 nodenv -v
 ```
+
 数字が表示されたでしょうか。次に、ホームディレクトリにある`.bash_profile`というファイルを開いて、`eval "$(nodenv init -)"`を書き込みます。
+macっていま、bashじゃないのか。zshなのか。ちょっとこれ変わるかも。
 
 ## Node.jsを入れよう
 とりあえず、入れよう
