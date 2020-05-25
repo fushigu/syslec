@@ -75,9 +75,9 @@ function searchPerson(data, firstName) {
 <details><summary>コード</summary>
 
 ```javascript
-function searchPerson(data, fisrtName) {
+function searchPerson(data, firstName) {
     for (let i = 0;i < data.length;i = i + 1) {
-        if (data[i].fisrtName === firstName) {
+        if (data[i].firstName === firstName) {
             //　見つかった
         }
     }
@@ -96,7 +96,7 @@ function searchPerson(data, fisrtName) {
 ```javascript
 function searchPerson(data, firstName) {
     for (let i = 0;i < data.length;i = i + 1) {
-        if (data[i].fisrtName === firstName) {
+        if (data[i].firstName === firstName) {
             return data[i]
         }
     }
