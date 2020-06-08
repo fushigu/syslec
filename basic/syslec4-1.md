@@ -145,7 +145,7 @@ showProfile(profile)
 さて、足りないところがありますよね。そうです。プロフィールが見つからなかったら、-1が返ってきます。その時呼び出す関数を書きましょう。名前はshowNoDataとでもしましょうか。
 
 ```javascript
-function shoeNoData() {
+function showNoData() {
     alert("プロフィールが存在しません")
 }
 ```
@@ -163,7 +163,7 @@ if (profile === -1) {
     showNoData()
 }
 else {
-    shoeProfile(profile)
+    showProfile(profile)
 }
 ```
 </details>
@@ -194,7 +194,7 @@ function getName() {
 
 function searchPerson(data, firstName) {
     for (let i = 0;i < data.length;i = i + 1) {
-        if (data[i].fisrtName === firstName) {
+        if (data[i].firstName === firstName) {
             return data[i]
         }
     }
@@ -205,7 +205,7 @@ function showProfile(profile) {
     alert("名前は" + profile.firstName + "\n姓は" + profile.secondName + "/nクラスは" + profile.class)
 }
 
-function shoeNoData() {
+function showNoData() {
     alert("プロフィールが存在しません")
 }
 
@@ -215,7 +215,7 @@ if (profile === -1) {
     showNoData()
 }
 else {
-    shoeProfile(profile)
+    showProfile(profile)
 }
 ```
 
@@ -242,7 +242,7 @@ while(flag) {
         showNoData()
     }
     else {
-        shoeProfile(profile)
+        showProfile(profile)
     }
     flag = confirm("終わりますか")
 }
