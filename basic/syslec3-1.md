@@ -107,7 +107,7 @@ console.log(1)
 では、JSでのコメントを書いてみましょう。二通りの書き方があります。
 ```javascript
 // コメント
-console.log("Hello World!")　//コメント
+console.log("Hello World!")//コメント
 /*コメント*/ console.log("Hello World!")
 ```
 `//`のほうは、`//`を書いた後ろがすべてコメントになります。
@@ -125,7 +125,7 @@ htmlファイルやcssファイルにコメントをかけないのかみたい�
     <head></head>
     <body>
         <p>Hello World!</p>
-        <!--　コメント
+        <!--コメント
             コメント
          -->
     </body>
@@ -358,8 +358,6 @@ alert(a + name + b)
 
 ## ちょっと特殊なこと
 
-時間がなさそうなら、この部分はカットです！
-
 数値と文字列を扱う方法については習いました。では、数値と文字列を「足し算」したらどうなるでしょうか？確かめてみましょう！
 
 ```javascript
@@ -376,9 +374,6 @@ let b = "あいうえお"
 a = String(a) + b
 console.log(a)
 ```
-
-
-### 補足
 
 では、`1`とか`2`といった数字の文字列を数値に変換するにはどうすればいいでしょうか？それは`変数 = parseInt(数字の文字列)`とすれば変数に数値が入ります。
 
@@ -400,6 +395,8 @@ let 変数 = prompt("質問")
 ```
 とすればよかったですね。
 では、ここで数学、英語と国語の点数を受け取って、合計点と平均点を返すプログラムを書いてみましょう！
+`prompt`で変数に代入されるものは文字列であることに注意してください．
+
 <details><summary>答え</summary>
 <div>
 
@@ -407,6 +404,10 @@ let 変数 = prompt("質問")
 let math = prompt("数学の点数を入力してください")
 let english = prompt("英語の点数を入力してください")
 let japanese = prompt("国語の点数を入力してください")
+
+math = parseInt(math)
+english = parseInt(english)
+japanese = parseInt(japanese)
 
 alert(math + english + japanese)
 alert((math + english + japanese) / 3)
@@ -559,6 +560,8 @@ else {
 
 ```javascript
 let num = prompt("数字を入れてください")
+num = parseInt(num)
+
 if (num % 4 === 0) { // 4の倍数なら
     alert("4の倍数です")
 }

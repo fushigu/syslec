@@ -78,7 +78,7 @@ function searchPerson(data, firstName) {
 function searchPerson(data, firstName) {
     for (let i = 0;i < data.length;i = i + 1) {
         if (data[i].firstName === firstName) {
-            //　見つかった
+            //見つかった
         }
     }
     // 見つからなかった

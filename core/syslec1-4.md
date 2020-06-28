@@ -9,6 +9,8 @@
 
 具体的には、MongoDBとapiの間はMongoDBの規則でやり取りをしないといけなく、apiとフロントエンドの通信は自分たちで決められます。
 
+![サーバーの構築](https://themarketingtechnologist-ghost.s3.amazonaws.com/2017/May/1200_628_MarketingTechnologist_Post_header_Template-1496124936584.png)
+
 
 ## サーバーについて
 
