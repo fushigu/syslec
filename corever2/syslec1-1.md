@@ -88,21 +88,32 @@ Homebrewは何かはおいておきましょう。入れてください。Xcode�
 以上をコマンドに打ち込んでください。おそらくこれでいけるはず。
 
 ## nodenvを入れよう
-anyenvを使いたい人は勝手にしてください。よくわからないよという人はこのまま読み進めてください。
 
 以下のコマンドを入れましょう。
 ```
-brew install nodenv
+brew install anyenv
 ```
+そのあと、
+```
+anyenv init
+```
+と打ちます。
+
+次に、ホームディレクトリにある`.bash_profile`というファイルを開いて、`eval "$(nodenv init -)"`を書き込みます。
+ようわからんなら、以下を打ち込めばいいです。
+```
+echo 'eval "$(anyenv init -)"' >> ~/.bash_profile
+```
+そのあとに、anyenvを使ってnodenvを入れていきます。
+```
+anyenv install nodenv
+```
+以上を打つとnodenvが入ります。以下のコマンドを打ってください。
 ```
 nodenv -v
 ```
+数字が表示されたでしょうか。以上でnodenvを入れるまで終わりました。
 
-数字が表示されたでしょうか。次に、ホームディレクトリにある`.bash_profile`というファイルを開いて、`eval "$(nodenv init -)"`を書き込みます。
-ようわからんなら、以下を打ち込めばいいです。
-```
-echo 'eval "$(nodenv init -)"' >> ~/.bash_profile
-```
 
 macっていま、bashじゃないのか。zshなのか。ちょっとこれ変わるかも。
 
@@ -128,6 +139,7 @@ MongoDBのサーバーを立てましょう。なんのこっちゃと思って�
 [MongoDBのサイト](https://www.mongodb.com/download-center/community)にアクセスして、On-Premises>MongoDB Community Server>current releaseのインストーラーをダウンロードして、インストールしてください。とりあえず、デフォルトでかまいません。最後に出てくる`MongoCompass`のインストールは任意です。GUI操作が僕は好きなので僕は入れました。
 
 ターミナルで以下のコマンドを打ってください。
+もしかすると、`mongod`というMongoDBサーバーを立ち上げる必要があるかもしれません。
 
 ```
 mongo

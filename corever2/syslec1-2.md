@@ -231,6 +231,8 @@ consola.ready(表示するもの)
 |  start |  青いstart |
 |  warn  |  黄色いwarn |
 
+などがあります。他のは[consolaのレポジトリ](https://github.com/nuxt-contrib/consola/blob/master/src/types.js)から探してみてください。
+
 ## require文について
 
 さて、大きなプロジェクトを開発していくと一つのファイルにまとめると開発しづらいですね。そういう時のために、実はNode.jsはファイルを分割出来ます。
